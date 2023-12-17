@@ -27,7 +27,7 @@
 ###### Please give me proper credit by linking back to [vatsalsinghkv.vercel.app](https://vatsalsinghkv.vercel.app).
 
 ```bash
-  git clone https://github.com/<YOUR USERNAME>/portfolio-website.git
+  git clone https://github.com/bipin7yadav/bipin7yadav-portFolioNextJs.git
 ```
 
 2. Go to the project directory
@@ -56,13 +56,6 @@
 
 - To change the theme, edit `src/styles/globals.css`
 
-## Continuous Development
-
-- [x] Add animation with framer-motion
-- [ ] Add Content Management System (CMS)
-- [ ] Add test cases
-- [ ] Separate route (archive) for all the projects with filters
-- [ ] Switch to Next 13
 
 ## Contact
 
@@ -71,6 +64,4 @@
 - [https://developer-portfolio-1hanzla100.vercel.app/](https://developer-portfolio-1hanzla100.vercel.app/) - Design Inspiration
 - [https://brittanychiang.com/](https://brittanychiang.com/) - Design Inspiration
 
-## Show Your Support
 
-Give a ⭐️ if you liked this project!

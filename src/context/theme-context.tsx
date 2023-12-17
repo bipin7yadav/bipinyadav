@@ -1,7 +1,7 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
 
 const initialState = {
-  isDark: false,
+  isDark: true,
   toggleTheme: () => {},
   setIsDarkMode: (theme: boolean) => {},
 };
