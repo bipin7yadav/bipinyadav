@@ -277,6 +277,6 @@ export const socialSection: SocialSectionType = {
 // Footer Section
 
 export const footerSection: FooterSectionType = {
-  title: 'Design & Built by Bipin Yadav',
-  link: 'https://github.com/bipin7yadav/portFolioNextJs',
+  title: ' Built by Bipin Yadav',
+  link: 'https://github.com/bipin7yadav/bipin7yadav-portFolioNextJs',
 };
