@@ -20,7 +20,7 @@ import { getId } from './helper';
  */
 
 export const socialLinks: StringKeyValueType = {
-  facebook: 'https://www.facebook.com/profile.php?id=100025211493753',
+  // facebook: 'https://www.facebook.com/profile.php?id=100025211493753',
   instagram: 'https://www.instagram.com/iambipinyadav7/',
   twitter: 'https://twitter.com/bipinyadav9769',
   github: 'https://github.com/bipin7yadav',
@@ -102,10 +102,11 @@ export const aboutSection: AboutSectionType = {
     items: [
       'NextJs',
       'React Js',
-      'ExpressJs',
+      'Express Js',
       'Javascript',
       'HTML CSS',
       'Redux Toolkit',
+      'React Native'
     ],
   },
   img: 'https://media.licdn.com/dms/image/C4E03AQEtIyarRZYvXg/profile-displayphoto-shrink_400_400/0/1611285912209?e=1707955200&v=beta&t=ZMqlUn8fkLVtp2GUhoPxfyB5byr1qISR7xe8_nVHpLk',
@@ -128,6 +129,7 @@ export const skillsSection: SkillsSectionType = {
         'Building responsive static websites using Next.js',
         'Building responsive Single Page Apps in React.js',
         'Building RESTful APIs in Express',
+        'Learning React Native',
       ],
       softwareSkills: [
         // iconify icons: https://icon-sets.iconify.design/
@@ -267,10 +269,10 @@ export const socialSection: SocialSectionType = {
       icon: 'lucide:linkedin',
       url: socialLinks.linkedin,
     },
-    {
-      icon: 'lucide:facebook',
-      url: socialLinks.facebook,
-    },
+    // {
+    //   icon: 'lucide:facebook',
+    //   url: socialLinks.facebook,
+    // },
   ],
 };
 
