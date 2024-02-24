@@ -110,7 +110,7 @@ export const aboutSection: AboutSectionType = {
       'React Native'
     ],
   },
-  img: Profile,
+  img:"/../../public/Profile.jpg",
 };
 
 // * Skills Section
