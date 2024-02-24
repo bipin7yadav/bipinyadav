@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Profile from "../../public/Profile.jpg"
 
 type Props = { src: string; alt: string };
 
@@ -6,7 +7,7 @@ const HeroImage = ({ src, alt }: Props) => {
   return (
     <div className="relative group w-64 h-64 sm:w-auto sm:h-auto">
       <Image
-        src={src}
+        src={src?src:Profile}
         alt={alt}
         width={300}
         height={300}

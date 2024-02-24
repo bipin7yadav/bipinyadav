@@ -3,10 +3,9 @@ import { HeroImage, ListItem, Wrapper, Link } from '../components';
 import { getSectionAnimation } from '../animations';
 import { aboutSection, author } from '../utils/portfolio';
 import { getId } from '../utils/helper';
-import Profile from "../../public/Profile.jpg"
 
 const About = () => {
-  const { title, list } = aboutSection;
+  const { title,img, list } = aboutSection;
   // To avoid hydration error
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -51,7 +50,7 @@ const About = () => {
             </>
           )}
         </div>
-        <HeroImage src={Profile} alt={author.name} />
+        <HeroImage src={img} alt={author.name} />
       </main>
     </Wrapper>
   ) : (

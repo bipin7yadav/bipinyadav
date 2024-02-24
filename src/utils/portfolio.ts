@@ -110,7 +110,7 @@ export const aboutSection: AboutSectionType = {
       'React Native'
     ],
   },
-  img:"/../../public/Profile.jpg",
+  img:"https://media.licdn.com/dms/image/C4E03AQEtIyarRZYvXg/profile-displayphoto-shrink_400_400/0/1611285912209?e=1714003200&v=beta&t=M1n28JHq7kHIH7ZCmZO-Lxof6TaNQUxyhAlJU2ufVDE",
 };
 
 // * Skills Section
