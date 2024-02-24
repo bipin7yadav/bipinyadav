@@ -12,6 +12,7 @@ import {
 import { StringKeyValueType } from '../types';
 import { resumeFileName } from './config';
 import { getId } from './helper';
+import Profile from "../../public/Profile.jpg"
 
 /*
  * =========================
@@ -81,7 +82,7 @@ export const heroSection: HeroSectionType = {
   tagline: 'I create visually pleasing interfaces for the web.',
   description:
     "I'm a passionate  web app developer having an experience of web applications with React.js & Next.js ",
- 
+
   specialText: 'Currently available for remote job & freelance',
   // either button or simple text (information)
   cta: {
@@ -109,7 +110,7 @@ export const aboutSection: AboutSectionType = {
       'React Native'
     ],
   },
-  img: 'https://media.licdn.com/dms/image/C4E03AQEtIyarRZYvXg/profile-displayphoto-shrink_400_400/0/1611285912209?e=1707955200&v=beta&t=ZMqlUn8fkLVtp2GUhoPxfyB5byr1qISR7xe8_nVHpLk',
+  img: Profile,
 };
 
 // * Skills Section
@@ -152,7 +153,7 @@ export const skillsSection: SkillsSectionType = {
         // { name: 'jest', icon: 'vscode-icons:file-type-jest' },
       ],
     }
-    
+
   ],
 };
 
@@ -172,13 +173,13 @@ export const experienceSection: ExperienceSectionType = {
         'Architected the folder structure and initial setup of the app.',
         'Reviewed and approved multiple Pull requests.',
         'Improved UI, fixed bugs, and developed client-requested features promptly.',
-'Developed a dynamic form feature, overcoming challenges in state handling and live validation.',
-'Optimized bulk image upload by implementing batch API calls and image compression, leading to a 3x increase in sales before a major exhibition.'
-        
-        
+        'Developed a dynamic form feature, overcoming challenges in state handling and live validation.',
+        'Optimized bulk image upload by implementing batch API calls and image compression, leading to a 3x increase in sales before a major exhibition.'
+
+
       ],
     },
-    
+
   ],
 };
 
@@ -203,7 +204,7 @@ export const projectsSection: ProjectsSectionType = {
       repo: 'https://github.com/bipin7yadav/HindKart',
       img: '/ecom.png',
       year: 2022,
-      tags: ['Reactjs',"useContext"],
+      tags: ['Reactjs', "useContext"],
     },
     {
       id: getId(),
@@ -223,7 +224,7 @@ export const projectsSection: ProjectsSectionType = {
       year: 2022,
       tags: ['React', 'Redux Toolkit'],
     },
-    
+
     // {
     //   id: getId(),
     //   name: 'bankist marketing',
@@ -233,7 +234,7 @@ export const projectsSection: ProjectsSectionType = {
     //   year: 2021,
     //   tags: ['html', 'CSS', 'JS'],
     // },
-   
+
   ],
 };
 
