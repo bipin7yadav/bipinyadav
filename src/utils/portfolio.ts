@@ -149,7 +149,7 @@ export const skillsSection: SkillsSectionType = {
         // { name: 'angularjs', icon: 'logos:angular-icon' },
         // { name: 'tailwindcss', icon: 'logos:tailwindcss-icon' },
         { name: 'redux', icon: 'logos:redux' },
-        // { name: 'database', icon: 'vscode-icons:file-type-sql' },
+        { name: 'database', icon: 'vscode-icons:file-type-sql' },
         // { name: 'jest', icon: 'vscode-icons:file-type-jest' },
       ],
     }
