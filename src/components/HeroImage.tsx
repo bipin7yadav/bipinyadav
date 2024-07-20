@@ -7,7 +7,7 @@ const HeroImage = ({ src, alt }: Props) => {
   return (
     <div className="relative group w-64 h-64 sm:w-auto sm:h-auto">
       <Image
-        src={src?src:Profile}
+        src={Profile}
         alt={alt}
         width={300}
         height={300}
