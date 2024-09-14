@@ -224,6 +224,15 @@ export const projectsSection: ProjectsSectionType = {
       year: 2022,
       tags: ['React', 'Redux Toolkit'],
     },
+    {
+      id: getId(),
+      name: 'Cash Register',
+      url: 'https://adoring-golick-395258.netlify.app/',
+      repo: 'https://github.com/bipin7yadav/cash-register',
+      img: '/cashRegister.png',
+      year: 2021,
+      tags: ["HTML","CSS"],
+    },
 
     // {
     //   id: getId(),
