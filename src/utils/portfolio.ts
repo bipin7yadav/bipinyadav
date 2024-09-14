@@ -231,7 +231,7 @@ export const projectsSection: ProjectsSectionType = {
       repo: 'https://github.com/bipin7yadav/cash-register',
       img: '/cashRegister.png',
       year: 2021,
-      tags: ["HTML","CSS"],
+      tags: ["HTML","CSS","Vanilla JS"],
     },
 
     // {
