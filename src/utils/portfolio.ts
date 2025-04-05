@@ -165,7 +165,7 @@ export const experienceSection: ExperienceSectionType = {
     {
       company: 'Invizio Solutions',
       companyUrl: 'https://inviziosolutions.com/',
-      role: 'frontend developer',
+      role: 'frontend developer -> Full stack developer',
       started: 'July 2022',
       upto: 'present',
       tasks: [
@@ -174,7 +174,12 @@ export const experienceSection: ExperienceSectionType = {
         'Reviewed and approved multiple Pull requests.',
         'Improved UI, fixed bugs, and developed client-requested features promptly.',
         'Developed a dynamic form feature, overcoming challenges in state handling and live validation.',
-        'Optimized bulk image upload by implementing batch API calls and image compression, leading to a 3x increase in sales before a major exhibition.'
+        'Optimized bulk image upload by implementing batch API calls and image compression, leading to a 3x increase in sales before a major exhibition.',
+        `contributed extensively to backend development with Node js/ Express, optimizing complex
+        SQL queries that improved API response time by 40% and played a key role in retaining 20% more customers on
+        recurring modules`,
+        `eployed backend services from scratch on internal Linux servers using PM2, Nginx, and shell scripts to streamline
+        service management and updates.`
 
 
       ],
@@ -231,7 +236,7 @@ export const projectsSection: ProjectsSectionType = {
       repo: 'https://github.com/bipin7yadav/cash-register',
       img: '/cashRegister.png',
       year: 2021,
-      tags: ["HTML","CSS","Vanilla JS"],
+      tags: ["HTML", "CSS", "Vanilla JS"],
     },
 
     // {
