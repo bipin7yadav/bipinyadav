@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         signature: ['agustina', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Outfit', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
       },
       screens: {
@@ -14,7 +14,7 @@ module.exports = {
       },
       colors: {
         bg: 'var(--color-bg)',
-        'bg-secondary': 'var(--color-bg-secondary)',
+        'bg-secondary': 'var(--color-bg-secondary)',// Using a slightly darker gray for secondary surfaces
         accent: 'var(--color-accent)',
         'accent-light': 'var(--color-accent-light)',
         text: 'var(--color-text)',

@@ -9,7 +9,7 @@ const Footer = () => {
         href={footerSection.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:text-accent transition"
+        className="hover:text-sky-500 transition"
       >
         {footerSection.title}
       </a>

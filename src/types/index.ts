@@ -22,6 +22,7 @@ export type ExperienceType = {
   started: Date | string;
   upto: Date | 'present' | string;
   tasks: string[];
+  awards?: any[];
 };
 
 export type ProjectType = {
@@ -32,6 +33,13 @@ export type ProjectType = {
   img: string;
   tags: string[];
   repo: string;
+};
+
+export type AwardType = {
+  id: string;
+  name: string;
+  year: number;
+  company: string;
 };
 
 export type StringKeyValueType = {

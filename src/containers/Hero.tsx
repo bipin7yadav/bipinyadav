@@ -25,7 +25,7 @@ const Hero = () => {
         variants={slideUp({ delay: getAnimationDelay(0) })}
         initial="hidden"
         animate="show"
-        className="text-sm md:text-base text-accent font-mono"
+        className="text-sm md:text-base text-sky-500 font-mono"
       >
         {subtitle}
       </motion.p>
@@ -62,7 +62,7 @@ const Hero = () => {
         variants={slideUp({ delay: getAnimationDelay(4) })}
         initial="hidden"
         animate="show"
-        className="text-xs md:text-sm font-mono text-accent"
+        className="text-xs md:text-sm font-mono text-sky-500"
       >
         {specialText}
       </motion.p>
@@ -75,9 +75,8 @@ const Hero = () => {
           initial="hidden"
           animate="show"
           href={cta?.url ?? '#'}
-          className={`mt-5 xs:mt-8 md:mt-10 ${
-            cta.hideInDesktop ? 'md:hidden' : ''
-          }`}
+          className={`mt-5 xs:mt-8 md:mt-10 ${cta.hideInDesktop ? 'md:hidden' : ''
+            }`}
           sameTab={cta?.sameTab}
         >
           {cta.title}
