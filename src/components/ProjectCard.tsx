@@ -25,11 +25,10 @@ const ProjectCard = ({
     <motion.div {...rest} className="w-full max-w-[350px]">
       <button
         onClick={(e) => {
-          // Don't run this if the clicked target is an anchor element
           if ((e.target as HTMLElement).closest('a')) return;
           window.open(url);
         }}
-        className="group bg-bg-secondary block w-full shadow-xl dark:shadow-2xl rounded-md overflow-hidden transition-all duration-200"
+        className="group relative bg-bg-secondary/60 backdrop-blur-md border border-slate-500/20 hover:border-accent/50 block w-full shadow-xl dark:shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-accent/20"
       >
         <div className="overflow-hidden h-[200px]">
           <Image
@@ -39,7 +38,7 @@ const ProjectCard = ({
             height={300}
             placeholder="blur"
             blurDataURL={blurImageURL}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
         <div className="p-4 py-3 space-y-1">

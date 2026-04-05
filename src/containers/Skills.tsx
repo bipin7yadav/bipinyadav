@@ -9,7 +9,7 @@ const Skills = () => {
   const { isDark } = useContext(themeContext);
 
   return (
-    <Wrapper id="skills" {...getSectionAnimation}>
+    <Wrapper className="lg:col-span-3" id="skills" {...getSectionAnimation}>
       <h2 className="heading-secondary text-center">{title}</h2>
 
       <div className="space-y-32">

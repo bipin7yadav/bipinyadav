@@ -13,6 +13,7 @@ import { StringKeyValueType } from '../types';
 import { resumeFileName } from './config';
 import { getId } from './helper';
 import Profile from "../../public/Profile.jpg"
+import InvizoAward from "../../public/InvizioAward.jpg"
 
 /*
  * =========================
@@ -22,7 +23,7 @@ import Profile from "../../public/Profile.jpg"
 
 export const socialLinks: StringKeyValueType = {
   // facebook: 'https://www.facebook.com/profile.php?id=100025211493753',
-  instagram: 'https://www.instagram.com/iambipinyadav7/',
+  instagram: 'https://www.instagram.com/iambipin_7/',
   twitter: 'https://twitter.com/bipinyadav9769',
   github: 'https://github.com/bipin7yadav',
   linkedin: 'https://www.linkedin.com/in/bipin-yadav-07a08217a/',
@@ -81,7 +82,7 @@ export const heroSection: HeroSectionType = {
   title: 'Bipin Yadav.',
   tagline: 'I create visually pleasing interfaces for the web.',
   description:
-    "I'm a passionate  web app developer having an experience of web applications with React.js & Next.js ",
+    "I'm an SDE 2 with expertise in building high-performance web applications using React.js, Next.js & Node.js.",
 
   specialText: 'Currently available for remote job & freelance',
   // either button or simple text (information)
@@ -110,7 +111,7 @@ export const aboutSection: AboutSectionType = {
       'React Native'
     ],
   },
-  img:"https://media.licdn.com/dms/image/C4E03AQEtIyarRZYvXg/profile-displayphoto-shrink_400_400/0/1611285912209?e=1720051200&v=beta&t=dD-9PRO4rJQouHlF2UIMOfOAxboSWjlcCMwd-lsVzxc",
+  img: "https://media.licdn.com/dms/image/C4E03AQEtIyarRZYvXg/profile-displayphoto-shrink_400_400/0/1611285912209?e=1720051200&v=beta&t=dD-9PRO4rJQouHlF2UIMOfOAxboSWjlcCMwd-lsVzxc",
 };
 
 // * Skills Section
@@ -165,24 +166,23 @@ export const experienceSection: ExperienceSectionType = {
     {
       company: 'Invizio Solutions',
       companyUrl: 'https://inviziosolutions.com/',
-      role: 'frontend developer -> Full stack developer',
+      role: 'Frontend Developer -> Software Development Engineer (SDE 2)',
       started: 'July 2022',
       upto: 'present',
       tasks: [
-        'Built static frontend UI from the ground up using React js and Figma handover designs.',
-        'Architected the folder structure and initial setup of the app.',
-        'Reviewed and approved multiple Pull requests.',
-        'Improved UI, fixed bugs, and developed client-requested features promptly.',
-        'Developed a dynamic form feature, overcoming challenges in state handling and live validation.',
-        'Optimized bulk image upload by implementing batch API calls and image compression, leading to a 3x increase in sales before a major exhibition.',
-        `contributed extensively to backend development with Node js/ Express, optimizing complex
-        SQL queries that improved API response time by 40% and played a key role in retaining 20% more customers on
-        recurring modules`,
-        `eployed backend services from scratch on internal Linux servers using PM2, Nginx, and shell scripts to streamline
-        service management and updates.`
-
-
+        'Promoted to Software Development Engineer 2 (SDE 2) in January 2026, reflecting a successful transition out of frontend into taking ownership of full-stack architecture.',
+        'Built responsive frontend applications from the ground up using React.js and Figma designs.',
+        'Optimized bulk image uploads with batch APIs and compression, boosting sales by 3x before a major event.',
+        'Enhanced Node.js/Express APIs by optimizing complex SQL queries, reducing response times by 40%.',
+        'Deployed and managed robust backend services on internal Linux servers using PM2 and Nginx.'
       ],
+      awards: [
+        {
+          title: "Backend Development Recognition",
+          description: "Awarded for contribution in backend development.",
+          image: InvizoAward
+        }
+      ]
     },
 
   ],
@@ -193,6 +193,24 @@ export const experienceSection: ExperienceSectionType = {
 export const projectsSection: ProjectsSectionType = {
   title: 'my projects',
   projects: [
+    {
+      id: getId(),
+      name: 'Book Store',
+      url: 'https://book-theta-kohl.vercel.app/products',
+      repo: '',
+      img: '/book-store.png',
+      year: 2024,
+      tags: ['React', 'Node.js', 'Express', 'MongoDB'],
+    },
+    {
+      id: getId(),
+      name: 'Gushwork',
+      url: 'https://gushwork-topaz.vercel.app/',
+      repo: '',
+      img: '/gushwork.png',
+      year: 2024,
+      tags: ['Next.js', 'Tailwind CSS'],
+    },
     {
       id: getId(),
       name: 'Web Tour',

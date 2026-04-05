@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <Wrapper
       id="hero"
-      className="min-h-screen h-full flex flex-col justify-center gap-6 xs:gap-7 mt-12 xs:mt-0"
+      className="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col justify-center gap-6 xs:gap-7"
     >
       <motion.p
         variants={slideUp({ delay: getAnimationDelay(0) })}
@@ -30,22 +30,66 @@ const Hero = () => {
         {subtitle}
       </motion.p>
 
-      <div className="text-4xl md:text-7xl font-bold tracking-tighter max-w-5xl">
+      <div className="text-3xl xs:text-4xl md:text-7xl font-bold tracking-tighter max-w-5xl">
         <motion.h1
-          variants={slideUp({ delay: getAnimationDelay(1) })}
           initial="hidden"
           animate="show"
-          className="text-slate-900 dark:text-slate-200 capitalize mb-2 leading-[1.1]"
+          variants={{
+            show: {
+              transition: {
+                staggerChildren: 0.05,
+                delayChildren: getAnimationDelay(1),
+              },
+            },
+          }}
+          className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 capitalize mb-2 leading-[1.1] flex flex-wrap"
         >
-          {title}
+          {title.split(' ').map((word, i) => (
+            <span key={i} className="inline-block mr-[0.25em] whitespace-nowrap">
+              {word.split('').map((char, j) => (
+                <motion.span
+                  key={j}
+                  variants={{
+                    hidden: { y: 20, opacity: 0 },
+                    show: { y: 0, opacity: 1, transition: { type: 'spring', damping: 12, stiffness: 200 } },
+                  }}
+                  className="inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
+          ))}
         </motion.h1>
         <motion.h1
-          variants={slideUp({ delay: getAnimationDelay(2) })}
           initial="hidden"
           animate="show"
-          className="leading-[1.2]"
+          variants={{
+            show: {
+              transition: {
+                staggerChildren: 0.03,
+                delayChildren: getAnimationDelay(2),
+              },
+            },
+          }}
+          className="leading-[1.2] text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500 flex flex-wrap"
         >
-          {tagline}
+          {tagline.split(' ').map((word, i) => (
+            <span key={i} className="inline-block mr-[0.25em] whitespace-nowrap">
+              {word.split('').map((char, j) => (
+                <motion.span
+                  key={j}
+                  variants={{
+                    hidden: { y: 20, opacity: 0 },
+                    show: { y: 0, opacity: 1, transition: { type: 'spring', damping: 12, stiffness: 200 } },
+                  }}
+                  className="inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
+          ))}
         </motion.h1>
       </div>
 
@@ -53,7 +97,7 @@ const Hero = () => {
         variants={slideUp({ delay: getAnimationDelay(3) })}
         initial="hidden"
         animate="show"
-        className="max-w-xl text-base md:text-lg"
+        className="max-w-xl text-base md:text-lg text-slate-400"
       >
         {description}
       </motion.p>
@@ -75,9 +119,8 @@ const Hero = () => {
           initial="hidden"
           animate="show"
           href={cta?.url ?? '#'}
-          className={`mt-5 xs:mt-8 md:mt-10 ${
-            cta.hideInDesktop ? 'md:hidden' : ''
-          }`}
+          className={`mt-5 xs:mt-8 md:mt-10 ${cta.hideInDesktop ? 'md:hidden' : ''
+            }`}
           sameTab={cta?.sameTab}
         >
           {cta.title}

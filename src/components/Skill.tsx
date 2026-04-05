@@ -43,7 +43,7 @@ const Skill = ({
         </ul>
       </div>
       {/* Right */}
-      <ShowLottie path={lottie} className="md:min-h-[448px] md:min-w-[448px]" />
+      <ShowLottie path={lottie} className="h-[250px] w-auto md:h-[448px] md:w-[448px]" />
     </motion.div>
   );
 };

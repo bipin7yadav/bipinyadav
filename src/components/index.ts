@@ -1,4 +1,7 @@
 import Button from './Button';
+import Loader from './Loader';
+import WhatsAppWidget from './WhatsAppWidget';
+import Cursor from './Cursor';
 import DarkModeButton from './DarkModeButton';
 import HeroImage from './HeroImage';
 import Link from './Link';
@@ -17,6 +20,9 @@ import Wrapper from './Wrapper';
 
 export {
   Button,
+  Loader,
+  WhatsAppWidget,
+  Cursor,
   NavButton,
   ShowLottie,
   SkillIcon,

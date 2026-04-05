@@ -1,5 +1,8 @@
 import type { NextPage } from 'next';
-import { SEO } from '../components';
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { SEO, Loader } from '../components';
+import Awards from '../components/Awards';
 import {
   About,
   Experience,
@@ -11,24 +14,36 @@ import {
 } from '../containers';
 import { seoData } from '../utils/portfolio';
 
-/**
- * TODO: Create separate page for all the projects with filters (vercel | netlify | github api for automation)
- * TODO: Switch to next13 app dir feature, when lottie files start working in app dir
- * TODO: Try test cases
- */
-
 const Home: NextPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <SEO {...seoData} />
-      <Layout>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </Layout>
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <Loader key="loader" />
+        ) : (
+          <div key="content">
+            <Layout>
+              <Hero />
+              <About />
+              <Skills />
+              <Experience />
+              <Projects />
+              <Awards />
+              <Contact />
+            </Layout>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

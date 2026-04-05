@@ -14,11 +14,11 @@ const Projects = () => {
   const visibleProjects = showMore ? projects : topProjects;
 
   return (
-    <Wrapper id="projects" animate={false} {...getSectionAnimation}>
+    <Wrapper className="lg:col-span-3 !py-12" id="projects" animate={false} {...getSectionAnimation}>
       <motion.h2 className="heading-secondary text-center !mb-12">
         {title}
       </motion.h2>
-      <div className="grid grid-cols-auto-250 xs:grid-cols-auto-300 gap-6 place-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-auto-250 gap-6 place-items-center">
         {sortByYear(visibleProjects).map((project, i) => {
           if (i < PROJECTS_INITIALLY) {
             return (

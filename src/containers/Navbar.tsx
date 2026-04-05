@@ -6,37 +6,6 @@ import { author, navbarSection } from '../utils/portfolio';
 import { getBreakpointsWidth, getId } from '../utils/helper';
 import useWindowWidth from '../hooks/use-window-width';
 
-/**
- * Hides the navbar while scrolling down
- * @param {Object} config
- * @param {String} [config.id=navbar] - id of navbar
- * @param {Number} [config.offset=100] - offset of navbar in px
- */
-
-const hideNavWhileScrolling = ({
-  id = 'navbar',
-  offset = 100,
-  when = true,
-}: {
-  id?: string;
-  offset?: number;
-  when: boolean;
-}) => {
-  const nav = document.getElementById(id);
-  if (!nav) return;
-
-  let prevScrollPos = window.pageYOffset;
-
-  window.onscroll = () => {
-    if (when) {
-      let curScrollPos = window.pageYOffset;
-      if (prevScrollPos < curScrollPos) nav.style.top = `-${offset}px`;
-      else nav.style.top = '0';
-      prevScrollPos = curScrollPos;
-    }
-  };
-};
-
 type NavItemsProps = {
   href?: string;
   children: React.ReactNode;
@@ -55,7 +24,7 @@ const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
     >
       <Link
         href={href || `/#${children}`}
-        className="p-2 hover:text-accent duration-500 block"
+        className="p-2 hover:text-sky-500 duration-500 block"
         onClick={onClick}
         withPadding
       >
@@ -74,7 +43,29 @@ const Navbar = () => {
   const ANIMATION_DELAY = windowWidth <= md ? 0 : 0.8;
 
   useEffect(() => {
-    hideNavWhileScrolling({ when: !navbarCollapsed });
+    if (navbarCollapsed) {
+      return;
+    }
+
+    const nav = document.getElementById('navbar');
+    if (!nav) return;
+
+    const offset = 100;
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const curScrollPos = window.pageYOffset;
+      if (prevScrollPos < curScrollPos && curScrollPos > offset) {
+        nav.style.top = `-${offset}px`;
+      } else {
+        nav.style.top = '0';
+      }
+      prevScrollPos = curScrollPos;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [navbarCollapsed]);
 
   return (
@@ -83,9 +74,9 @@ const Navbar = () => {
       initial="hidden"
       animate="show"
       id="navbar"
-      className="px-8 md:px-6 xl:px-12 py-4 fixed inset-x-0 top-0 right-0 flex justify-between items-end z-50 duration-500 backdrop-blur-lg"
+      className="px-8 md:px-6 xl:px-12 py-4 fixed inset-x-0 top-0 right-0 flex justify-between items-end z-50 duration-500 backdrop-blur-2xl bg-bg/30 border-b border-white/5 dark:border-white/5 shadow-sm"
     >
-      <h1 className="font-signature text-accent capitalize text-2xl relative group top-1">
+      <h1 className="font-signature text-accent capitalize text-2xl relative group top-1 hover:text-white transition-colors duration-300">
         <a href="/#hero" className="block">
           {author.name}
           <div className="absolute bottom-1.5 left-0 h-[1px] w-0 group-hover:w-full bg-accent duration-300"></div>
@@ -102,7 +93,7 @@ const Navbar = () => {
 
       {(navbarCollapsed || windowWidth > md) && (
         <nav
-          className={`capitalize absolute text-sm duration-200 md:bg-transparent z-50 w-[90%] left-1/2 -translate-x-1/2 top-full h-max rounded-xl shadow-xl p-6 bg-bg-secondary md:blocks md:static md:w-auto md:left-auto md:transform-none md:top-auto md:rounded-none md:shadow-none md:p-0 md:h-auto`}
+          className={`capitalize absolute text-sm duration-200 md:bg-transparent z-50 w-[92vw] left-1/2 -translate-x-1/2 top-[calc(100%+0.5rem)] h-max max-h-[80vh] overflow-y-auto rounded-3xl shadow-2xl p-6 bg-bg-secondary/90 backdrop-blur-3xl border border-white/5 md:static md:w-auto md:left-auto md:transform-none md:top-auto md:rounded-none md:shadow-none md:p-0 md:h-auto md:max-h-none md:overflow-visible`}
         >
           <ul
             className={`list-style-none flex flex-col gap-3 lg:gap-5 xl:gap-6 md:flex-row items-stretch md:items-center`}
