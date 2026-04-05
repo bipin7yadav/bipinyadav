@@ -7,6 +7,9 @@
     "check": "prettier --check .",
     "lint": "prettier --write ."
   },
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.0",
     "framer-motion": "^9.0.3",
