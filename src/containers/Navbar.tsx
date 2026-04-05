@@ -74,12 +74,12 @@ const Navbar = () => {
       initial="hidden"
       animate="show"
       id="navbar"
-      className="px-8 md:px-6 xl:px-12 py-4 fixed inset-x-0 top-0 right-0 flex justify-between items-end z-50 duration-500 backdrop-blur-lg"
+      className="px-8 md:px-6 xl:px-12 py-4 fixed inset-x-0 top-0 right-0 flex justify-between items-end z-50 duration-500 backdrop-blur-2xl bg-bg/30 border-b border-white/5 dark:border-white/5 shadow-sm"
     >
-      <h1 className="font-signature text-sky-500 capitalize text-2xl relative group top-1">
+      <h1 className="font-signature text-accent capitalize text-2xl relative group top-1 hover:text-white transition-colors duration-300">
         <a href="/#hero" className="block">
           {author.name}
-          <div className="absolute bottom-1.5 left-0 h-[1px] w-0 group-hover:w-full bg-sky-500 duration-300"></div>
+          <div className="absolute bottom-1.5 left-0 h-[1px] w-0 group-hover:w-full bg-accent duration-300"></div>
         </a>
       </h1>
 
@@ -93,7 +93,7 @@ const Navbar = () => {
 
       {(navbarCollapsed || windowWidth > md) && (
         <nav
-          className={`capitalize absolute text-sm duration-200 md:bg-transparent z-50 w-[90%] left-1/2 -translate-x-1/2 top-full h-max rounded-xl shadow-xl p-6 bg-bg-secondary md:blocks md:static md:w-auto md:left-auto md:transform-none md:top-auto md:rounded-none md:shadow-none md:p-0 md:h-auto`}
+          className={`capitalize absolute text-sm duration-200 md:bg-transparent z-50 w-[92vw] left-1/2 -translate-x-1/2 top-[calc(100%+0.5rem)] h-max max-h-[80vh] overflow-y-auto rounded-3xl shadow-2xl p-6 bg-bg-secondary/90 backdrop-blur-3xl border border-white/5 md:static md:w-auto md:left-auto md:transform-none md:top-auto md:rounded-none md:shadow-none md:p-0 md:h-auto md:max-h-none md:overflow-visible`}
         >
           <ul
             className={`list-style-none flex flex-col gap-3 lg:gap-5 xl:gap-6 md:flex-row items-stretch md:items-center`}

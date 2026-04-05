@@ -82,7 +82,7 @@ export const heroSection: HeroSectionType = {
   title: 'Bipin Yadav.',
   tagline: 'I create visually pleasing interfaces for the web.',
   description:
-    "I'm a passionate  web app developer having an experience of web applications with React.js & Next.js ",
+    "I'm an SDE 2 with expertise in building high-performance web applications using React.js, Next.js & Node.js.",
 
   specialText: 'Currently available for remote job & freelance',
   // either button or simple text (information)

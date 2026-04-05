@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { Icon } from '@iconify/react';
 import udemyNodecertificate from "../../public/UdemyNodeCertificate.jpg";
 import versionControlCertificate from "../../public/VersionControlCertificate.jpg";
 import reactNativeCertificate from "../../public/ReactNativeCertificate.jpeg";
+import Wrapper from './Wrapper';
+import { getSectionAnimation } from '../animations';
 
 const Awards = () => {
     const [selectedImage, setSelectedImage] = useState<string | StaticImageData | null>(null);
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isHovered, setIsHovered] = useState(false);
 
     const certificates = [
         {
@@ -51,22 +55,49 @@ const Awards = () => {
         }
     ];
 
+    useEffect(() => {
+        if (!isHovered && scrollRef.current) {
+            const interval = setInterval(() => {
+                const { scrollLeft, offsetWidth, scrollWidth } = scrollRef.current!;
+                const nextScroll = scrollLeft + offsetWidth >= scrollWidth - 10 ? 0 : scrollLeft + offsetWidth;
+                scrollRef.current?.scrollTo({
+                    left: nextScroll,
+                    behavior: 'smooth',
+                });
+            }, 4000);
+            return () => clearInterval(interval);
+        }
+    }, [isHovered]);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollRef.current) {
+            const { scrollLeft, offsetWidth } = scrollRef.current;
+            const scrollAmount = direction === 'left' ? -offsetWidth : offsetWidth;
+            scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    };
+
     return (
-        <section id="awards" className="py-20 bg-bg-secondary">
-            <div className="container mx-auto px-4">
+        <Wrapper id="awards" className="lg:col-span-3 !py-12" {...getSectionAnimation}>
+            <div className="container mx-auto px-1 md:px-4 relative group">
                 <h2 className="heading-secondary text-center !mb-16">
                     Courses & <span className="text-accent">Certificates</span>
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div 
+                    ref={scrollRef}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    className="flex xl:grid xl:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 -mx-4 px-4 md:mx-0 md:px-0 lg:overflow-visible no-scrollbar scroll-smooth"
+                >
                     {certificates.map((cert) => (
                         <div
                             key={cert.id}
-                            className="bg-bg p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-dark-3/20 hover:border-accent group"
+                            className="bg-bg p-6 sm:p-7 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-dark-3/20 hover:border-accent group/card flex-none w-[80vw] sm:w-[320px] xl:w-auto snap-center"
                         >
                             <div className="flex flex-col h-full">
                                 <div
-                                    className="w-full h-48 relative mb-6 rounded-lg overflow-hidden cursor-pointer"
+                                    className="w-full h-40 relative mb-5 rounded-lg overflow-hidden cursor-pointer"
                                     onClick={() => setSelectedImage(cert.image)}
                                 >
                                     <Image
@@ -74,15 +105,15 @@ const Awards = () => {
                                         alt={cert.title}
                                         width={500}
                                         height={300}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500"
                                         unoptimized
                                     />
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+                                    <div className="absolute inset-0 bg-black/0 group-hover/card:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover/card:opacity-100 duration-300">
                                         <Icon icon="carbon:zoom-in" className="text-white text-4xl drop-shadow-lg" />
                                     </div>
                                 </div>
                                 <div className="flex justify-between items-start mb-4">
-                                    <span className="text-5xl text-accent/20 font-bold group-hover:text-accent/40 transition-colors">
+                                    <span className="text-5xl text-accent/20 font-bold group-hover/card:text-accent/40 transition-colors">
                                         0{cert.id}
                                     </span>
                                     <span className="text-sm font-medium text-dark-3 bg-dark-2/5 px-3 py-1 rounded-full">
@@ -90,7 +121,7 @@ const Awards = () => {
                                     </span>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-dark-1 mb-2 group-hover:text-accent transition-colors">
+                                <h3 className="text-xl font-bold text-dark-1 mb-2 group-hover/card:text-accent transition-colors">
                                     {cert.title}
                                 </h3>
 
@@ -105,6 +136,22 @@ const Awards = () => {
                         </div>
                     ))}
                 </div>
+
+                {/* Navigation Arrows */}
+                <button 
+                  onClick={() => scroll('left')}
+                  className="absolute left-[-10px] sm:left-0 top-1/2 -translate-y-1/2 z-10 bg-accent/90 backdrop-blur-sm p-2 rounded-full border border-white/20 shadow-xl text-white hover:bg-white hover:text-accent transition-all duration-300 active:scale-95"
+                  aria-label="Previous certificate"
+                >
+                  <Icon icon="carbon:chevron-left" width={20} height={20} className="sm:w-6 sm:h-6" />
+                </button>
+                <button 
+                  onClick={() => scroll('right')}
+                  className="absolute right-[-10px] sm:right-0 top-1/2 -translate-y-1/2 z-10 bg-accent/90 backdrop-blur-sm p-2 rounded-full border border-white/20 shadow-xl text-white hover:bg-white hover:text-accent transition-all duration-300 active:scale-95"
+                  aria-label="Next certificate"
+                >
+                  <Icon icon="carbon:chevron-right" width={20} height={20} className="sm:w-6 sm:h-6" />
+                </button>
             </div>
 
             {/* Lightbox */}
@@ -134,7 +181,7 @@ const Awards = () => {
                     </div>
                 </div>
             )}
-        </section>
+        </Wrapper>
     );
 };
 
