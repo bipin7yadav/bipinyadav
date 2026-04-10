@@ -66,7 +66,7 @@ const Hero = () => {
             variants={slideUp({ delay: getAnimationDelay(1.5) })}
             initial="hidden"
             animate="show"
-            className="inline-flex items-center gap-2 px-3 py-1.5 text-sm md:text-base text-green-400 bg-green-400/10 border border-green-400/20 rounded-full font-medium"
+            className="inline-flex items-center gap-2 px-3 py-1.5 text-sm md:text-base text-green-400 bg-green-400/10 border border-green-400/20 rounded-full font-medium tracking-normal"
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             Open to work

@@ -62,16 +62,31 @@ const Button = (props: Props & MotionProps) => {
     const { sameTab, ...motionProps } = props;
     removeKeys<Props & LinkProps>(motionProps, buttonProps);
 
+    const isPdf = props.href.endsWith('.pdf');
+    const isExternalOrAsset = props.href.startsWith('http') || props.href.startsWith('mailto:') || isPdf;
+
     return (
       <motion.span {...motionProps}>
-        <Link
-          className={classes}
-          href={props.href}
-          target={sameTab ? '_self' : '_blank'}
-          rel="noopener noreferrer"
-        >
-          {children}
-        </Link>
+        {isExternalOrAsset ? (
+          <a
+            className={classes}
+            href={props.href}
+            target={sameTab ? '_self' : '_blank'}
+            rel="noopener noreferrer"
+            {...(isPdf ? { download: true } : {})}
+          >
+            {children}
+          </a>
+        ) : (
+          <Link
+            className={classes}
+            href={props.href}
+            target={sameTab ? '_self' : '_blank'}
+            rel="noopener noreferrer"
+          >
+            {children}
+          </Link>
+        )}
       </motion.span>
     );
   }
