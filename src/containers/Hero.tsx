@@ -31,19 +31,20 @@ const Hero = () => {
       </motion.p>
 
       <div className="text-3xl xs:text-4xl md:text-7xl font-bold tracking-tighter max-w-5xl">
-        <motion.h1
-          initial="hidden"
-          animate="show"
-          variants={{
-            show: {
-              transition: {
-                staggerChildren: 0.05,
-                delayChildren: getAnimationDelay(1),
+        <div className="flex items-center flex-wrap gap-4 md:gap-6 mb-2">
+          <motion.h1
+            initial="hidden"
+            animate="show"
+            variants={{
+              show: {
+                transition: {
+                  staggerChildren: 0.05,
+                  delayChildren: getAnimationDelay(1),
+                },
               },
-            },
-          }}
-          className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 capitalize mb-2 leading-[1.1] flex flex-wrap"
-        >
+            }}
+            className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 capitalize leading-[1.1] flex flex-wrap"
+          >
           {title.split(' ').map((word, i) => (
             <span key={i} className="inline-block mr-[0.25em] whitespace-nowrap">
               {word.split('').map((char, j) => (
@@ -60,7 +61,17 @@ const Hero = () => {
               ))}
             </span>
           ))}
-        </motion.h1>
+          </motion.h1>
+          <motion.div
+            variants={slideUp({ delay: getAnimationDelay(1.5) })}
+            initial="hidden"
+            animate="show"
+            className="inline-flex items-center gap-2 px-3 py-1.5 text-sm md:text-base text-green-400 bg-green-400/10 border border-green-400/20 rounded-full font-medium"
+          >
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            Open to work
+          </motion.div>
+        </div>
         <motion.h1
           initial="hidden"
           animate="show"
@@ -112,19 +123,28 @@ const Hero = () => {
       </motion.p>
 
       {cta && (
-        <Button
-          size="lg"
-          type="link"
-          variants={slideUp({ delay: getAnimationDelay(5) })}
-          initial="hidden"
-          animate="show"
-          href={cta?.url ?? '#'}
-          className={`mt-5 xs:mt-8 md:mt-10 ${cta.hideInDesktop ? 'md:hidden' : ''
-            }`}
-          sameTab={cta?.sameTab}
-        >
-          {cta.title}
-        </Button>
+        <div className={`mt-5 xs:mt-8 md:mt-10 flex flex-wrap items-center gap-6 ${cta.hideInDesktop ? 'md:hidden' : ''}`}>
+          <Button
+            size="lg"
+            type="link"
+            variants={slideUp({ delay: getAnimationDelay(5) })}
+            initial="hidden"
+            animate="show"
+            href={cta?.url ?? '#'}
+            sameTab={cta?.sameTab}
+          >
+            {cta.title}
+          </Button>
+          <motion.a
+            variants={slideUp({ delay: getAnimationDelay(5.1) })}
+            initial="hidden"
+            animate="show"
+            href="mailto:bipinyadav9769@gmail.com"
+            className="text-sm md:text-base text-slate-300 hover:text-accent duration-200 underline underline-offset-4 font-mono"
+          >
+            bipinyadav9769@gmail.com
+          </motion.a>
+        </div>
       )}
     </Wrapper>
   );

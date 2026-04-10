@@ -126,6 +126,18 @@ const Navbar = () => {
                   {cta.title}
                 </Button>
               )}
+              <motion.a
+                variants={slideIn({
+                  delay: ANIMATION_DELAY + (navLinks.length + 0.5) / 10,
+                  direction: 'down',
+                })}
+                initial="hidden"
+                animate="show"
+                href="mailto:bipinyadav9769@gmail.com"
+                className="hidden md:block text-slate-300 hover:text-accent duration-200 underline underline-offset-4 font-mono text-sm"
+              >
+                bipinyadav9769@gmail.com
+              </motion.a>
               <DarkModeButton
                 onClick={() => setNavbarCollapsed(false)}
                 variants={slideIn({

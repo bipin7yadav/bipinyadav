@@ -35,9 +35,9 @@ export const author = {
 };
 
 export const seoData = {
-  title: 'Bipin | Web App Developer',
+  title: 'Bipin Yadav | React & Full Stack Developer',
   description:
-    'Bipin Yadav is a frontend developer who specializes in building  exceptional visual interfaces.',
+    'Bipin Yadav — React & Node.js developer with 3+ years building scalable SaaS products. Based in Mumbai.',
   author: author.name,
   image:
     'https://media.licdn.com/dms/image/C4E03AQEtIyarRZYvXg/profile-displayphoto-shrink_400_400/0/1611285912209?e=1707955200&v=beta&t=ZMqlUn8fkLVtp2GUhoPxfyB5byr1qISR7xe8_nVHpLk',
@@ -70,7 +70,7 @@ export const navbarSection: NavbarSectionType = {
     { name: 'contact', url: '/#contact' },
   ],
   cta: {
-    title: 'resume',
+    title: 'Download CV',
     url: `/${resumeFileName}`,
   },
 };
@@ -80,7 +80,7 @@ export const navbarSection: NavbarSectionType = {
 export const heroSection: HeroSectionType = {
   subtitle: 'Hi, my name is',
   title: 'Bipin Yadav.',
-  tagline: 'I create visually pleasing interfaces for the web.',
+  tagline: 'React & Full Stack Developer · 3+ yrs building SaaS products',
   description:
     "I'm an SDE 2 with expertise in building high-performance web applications using React.js, Next.js & Node.js.",
 
@@ -195,12 +195,33 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'Form Builder',
+      url: '',
+      repo: '',
+      img: '/book-store.png',
+      year: 2024,
+      tags: ['React', 'Node.js', 'Express', 'MongoDB'],
+      stats: 'Contributed to 35% lift in lead conversions',
+    },
+    {
+      id: getId(),
+      name: 'Image Upload Optimization',
+      url: '',
+      repo: '',
+      img: '/gushwork.png',
+      year: 2024,
+      tags: ['Next.js', 'Node.js', 'AWS S3'],
+      stats: 'Cut upload time by 50%',
+    },
+    {
+      id: getId(),
       name: 'Book Store',
       url: 'https://book-theta-kohl.vercel.app/products',
       repo: '',
       img: '/book-store.png',
       year: 2024,
       tags: ['React', 'Node.js', 'Express', 'MongoDB'],
+      stats: 'Full-stack e-commerce app with secure payment gateway Integration.',
     },
     {
       id: getId(),
@@ -210,6 +231,7 @@ export const projectsSection: ProjectsSectionType = {
       img: '/gushwork.png',
       year: 2024,
       tags: ['Next.js', 'Tailwind CSS'],
+      stats: 'Modern landing page with robust responsive design capabilities.',
     },
     {
       id: getId(),
@@ -219,6 +241,7 @@ export const projectsSection: ProjectsSectionType = {
       img: '/natour.png',
       year: 2023,
       tags: ['Reactjs', 'SASS'],
+      stats: 'Comprehensive tour booking platform featuring seamless navigation.',
     },
     {
       id: getId(),
@@ -228,6 +251,7 @@ export const projectsSection: ProjectsSectionType = {
       img: '/ecom.png',
       year: 2022,
       tags: ['Reactjs', "useContext"],
+      stats: 'Global state management achieved without third-party dependencies.',
     },
     {
       id: getId(),
@@ -237,6 +261,7 @@ export const projectsSection: ProjectsSectionType = {
       img: '/quizApp.png',
       year: 2022,
       tags: ['Reactjs', 'useContext'],
+      stats: 'Dynamic interactive forms and state-driven UI evaluation.',
     },
     {
       id: getId(),
@@ -246,15 +271,17 @@ export const projectsSection: ProjectsSectionType = {
       img: '/youtube.png',
       year: 2022,
       tags: ['React', 'Redux Toolkit'],
+      stats: 'Highly performant media library leveraging global state with Redux.',
     },
     {
       id: getId(),
       name: 'Cash Register',
-      url: 'https://adoring-golick-395258.netlify.app/',
+      url: '', // Dead link
       repo: 'https://github.com/bipin7yadav/cash-register',
       img: '/cashRegister.png',
       year: 2021,
       tags: ["HTML", "CSS", "Vanilla JS"],
+      stats: 'Core logic implemented directly using raw APIs and pure JS.',
     },
 
     // {

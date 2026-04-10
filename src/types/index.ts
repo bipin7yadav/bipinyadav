@@ -33,6 +33,7 @@ export type ProjectType = {
   img: string;
   tags: string[];
   repo: string;
+  stats?: string;
 };
 
 export type AwardType = {
